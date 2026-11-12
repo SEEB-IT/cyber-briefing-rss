@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Briefing cybersécurité — France &amp; monde</title>
-    <link>https://github.com/SEEB-IT/cyber-briefing-rss</link>
+    <link>https://groupeseeb.sharepoint.com/it/SitePages/CollabHome.aspx</link>
     <description>Briefing hebdomadaire de l'actualité cybersécurité en France et dans le monde : recommandations ANSSI, alertes CERT-FR, cybermalveillance.gouv.fr, grandes attaques internationales.</description>
     <language>fr</language>
-    <lastBuildDate>Thu, 12 Nov 2026 12:00:00 +0000</lastBuildDate>
-    <atom:link href="https://raw.githubusercontent.com/SEEB-IT/cyber-briefing-rss/main/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Thu, 12 Nov 2026 13:24:28 GMT</lastBuildDate>
     <item>
       <title>Briefing cybersécurité — semaine du 5 au 12 novembre 2026 : l'Iran accusé du sabotage des chaînes du froid</title>
-      <link>https://github.com/SEEB-IT/cyber-briefing-rss#briefing-2026-11-12</link>
+      <link>https://github.com/SEEB-IT/cyber-briefing-rss</link>
       <guid isPermaLink="false">cyber-briefing-2026-11-12</guid>
       <pubDate>Thu, 12 Nov 2026 08:00:00 +0100</pubDate>
       <description><![CDATA[
