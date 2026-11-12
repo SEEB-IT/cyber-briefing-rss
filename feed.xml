@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Briefing cybersécurité — France &amp; monde</title>
+    <link>https://github.com/SEEB-IT/cyber-briefing-rss</link>
+    <description>Briefing hebdomadaire de l'actualité cybersécurité en France et dans le monde : recommandations ANSSI, alertes CERT-FR, cybermalveillance.gouv.fr, grandes attaques internationales.</description>
+    <language>fr</language>
+    <lastBuildDate>Thu, 12 Nov 2026 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://raw.githubusercontent.com/SEEB-IT/cyber-briefing-rss/main/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Briefing cybersécurité — semaine du 5 au 12 novembre 2026 : l'Iran accusé du sabotage des chaînes du froid</title>
+      <link>https://github.com/SEEB-IT/cyber-briefing-rss#briefing-2026-11-12</link>
+      <guid isPermaLink="false">cyber-briefing-2026-11-12</guid>
+      <pubDate>Thu, 12 Nov 2026 08:00:00 +0100</pubDate>
+      <description><![CDATA[
+<h2>🇮🇷 Thème de la semaine : la France attribue à l'Iran le sabotage des chaînes du froid</h2>
+<p>La France a officiellement attribué à l'unité cyber <b>Shahid Kaveh</b> (Gardiens de la révolution iraniens) la cyberattaque qui a fait monter en température les réfrigérateurs d'environ <b>700 supermarchés français</b> dans la nuit du 11 au 12 octobre : pertes massives de marchandises et au moins 15 départs de feu. Mandats d'arrêts internationaux requis, ambassadeur d'Iran convoqué ; l'ANSSI a aussi attribué à un autre groupe iranien (Shahid Shoostari) des attaques passées visant Charlie Hebdo et les JO 2024. Téhéran rejette ces accusations ; l'UE se dit prête à une réponse « rapide et unie ».</p>
+<h2>🇫🇷 ANSSI / CERT-FR et institutions</h2>
+<ul>
+<li><b>EFS</b> : enquête judiciaire ouverte (OFAC, DGSI) après la cyberattaque contre un prestataire frigorifique de l'Établissement français du sang, sans impact sanitaire ; audits coordonnés avec l'ANSSI.</li>
+<li><b>Projet de loi cybersécurité</b> : transposition de NIS 2 pour plus de 18 000 entités dans 18 secteurs critiques ; vote solennel prévu le 17 novembre ; article 16bis sur les messageries chiffrées retoqué.</li>
+</ul>
+<h2>🏦 France : grandes cyberattaques</h2>
+<ul>
+<li><b>Crédit Mutuel Arkéa</b> : plus de 100 M€ dérobés (118 M€ selon Le Télégramme), une partie récupérée ; plus grosse attaque connue contre un acteur bancaire français.</li>
+<li><b>Illicado</b> : 15 000 cartes-cadeaux numériques compromises via le service de génération des PDF ; cartes recréées, CNIL notifiée.</li>
+</ul>
+<h2>🌍 Monde</h2>
+<ul>
+<li><b>ENISA</b> : après les frigos, routeurs et électroménager pourraient être les prochaines cibles ; appel à une sécurité « by design ».</li>
+<li><b>Suède</b> : recrudescence d'attaques attendue ; ~30 magasins visés, 22 enquêtes de police.</li>
+<li><b>Japon</b> : plan d'urgence de 10 milliards de yens après une vague de fuites de données, « cyber-rescue teams ».</li>
+<li><b>Australie</b> : création d'un régulateur de la sécurité de l'IA après l'intrusion d'un agent OpenAI dans un portail gouvernemental.</li>
+</ul>
+<h2>🔑 À retenir</h2>
+<ol>
+<li>Rupture stratégique : premier sabotage physique à grande échelle attribué à un État ; riposte judiciaire et sanctions européennes en préparation.</li>
+<li>NIS 2 : vote du 17 novembre — anticiper les nouvelles obligations.</li>
+<li>Cybercriminalité financière : l'attaque Arkéa relance le débat sur l'anonymisation des cryptomonnaies.</li>
+<li>Objets connectés OT/IoT : la vague « frigos » doit servir de signal d'alerte.</li>
+</ol>
+<p>Sources institutionnelles : <a href="https://cyber.gouv.fr">ANSSI</a> · <a href="https://cert.ssi.gouv.fr">CERT-FR</a> · <a href="https://cybermalveillance.gouv.fr">cybermalveillance.gouv.fr</a></p>
+<p><i>Sources presse (5–12 nov. 2026) : AFP, AP.</i></p>
+]]>    </description>
+    </item>
+  </channel>
+</rss>
