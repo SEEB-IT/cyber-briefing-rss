@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Briefing cybersécurité — Groupe SEEB</title>
+<style>
+  :root {
+    --seeb-rouge: #f52b03;
+    --seeb-anthracite: #32434b;
+    --seeb-anthracite-fonce: #26323a;
+    --seeb-gris-clair: #e5e8e9;
+    --seeb-gris-doux: #475b64;
+    --texte: #f3f5f6;
+    --texte-attenué: #b8c2c7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", "Calibri", system-ui, sans-serif;
+    background: linear-gradient(160deg, var(--seeb-anthracite-fonce) 0%, var(--seeb-anthracite) 55%, #3a4d56 100%);
+    color: var(--texte);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ---------- Bandeau supérieur ---------- */
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.6vh 3vw 1.2vh 3vw;
+    border-bottom: 0.5vh solid var(--seeb-rouge);
+    background: rgba(38, 50, 58, 0.55);
+    flex: 0 0 auto;
+  }
+  .marque { display: flex; align-items: baseline; gap: 1.2vw; }
+  .marque .groupe { font-size: 3.4vh; font-weight: 800; letter-spacing: 0.12em; }
+  .marque .groupe .rouge { color: var(--seeb-rouge); }
+  .marque .service { font-size: 1.9vh; color: var(--texte-attenué); letter-spacing: 0.22em; text-transform: uppercase; }
+  .horodatage { text-align: right; }
+  .horodatage .titre { font-size: 1.9vh; color: var(--seeb-rouge); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+  .horodatage .semaine { font-size: 1.7vh; color: var(--texte-attenué); margin-top: 0.4vh; }
+
+  /* ---------- Zone principale ---------- */
+  main { flex: 1 1 auto; position: relative; padding: 2.2vh 3vw 0 3vw; overflow: hidden; }
+  .slide {
+    position: absolute; inset: 2.2vh 3vw 0 3vw;
+    opacity: 0; transform: translateY(2.4vh);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    display: flex; flex-direction: column;
+  }
+  .slide.actif { opacity: 1; transform: translateY(0); }
+
+  .slide h1 {
+    font-size: 4.6vh; line-height: 1.18; font-weight: 800; margin-bottom: 1vh;
+  }
+  .slide h1 .rouge { color: var(--seeb-rouge); }
+  .slide .sous-titre { font-size: 2.1vh; color: var(--texte-attenué); margin-bottom: 2.2vh; }
+
+  .cartes { display: flex; gap: 1.6vw; flex: 1 1 auto; min-height: 0; }
+  .carte {
+    flex: 1; background: rgba(255, 255, 255, 0.05);
+    border: 0.25vh solid rgba(229, 232, 233, 0.14);
+    border-top: 0.6vh solid var(--seeb-rouge);
+    border-radius: 1.2vh; padding: 2.2vh 1.4vw;
+    display: flex; flex-direction: column;
+  }
+  .carte h2 {
+    font-size: 2.3vh; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--seeb-rouge); font-weight: 700; margin-bottom: 1.2vh;
+  }
+  .carte p { font-size: 1.95vh; line-height: 1.45; color: var(--texte); }
+  .carte p + p { margin-top: 1.2vh; }
+  .carte b { color: #ffffff; }
+  .chiffre-cle {
+    margin-top: auto; padding-top: 1.6vh;
+    border-top: 0.15vh solid rgba(229, 232, 233, 0.18);
+    font-size: 1.8vh; color: var(--texte-attenué);
+  }
+  .chiffre-cle .valeur {
+    display: block; font-size: 3.6vh; font-weight: 800; color: var(--seeb-rouge); line-height: 1.1;
+  }
+
+  /* Liste "à retenir" */
+  .points { list-style: none; display: flex; flex-direction: column; gap: 1.6vh; }
+  .points li {
+    display: flex; align-items: flex-start; gap: 1.2vw;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 0.7vh solid var(--seeb-rouge);
+    border-radius: 0 0.8vh 0.8vh 0; padding: 1.8vh 1.4vw;
+    font-size: 2.15vh; line-height: 1.4;
+  }
+  .points .num {
+    font-size: 3.2vh; font-weight: 800; color: var(--seeb-rouge); line-height: 1; min-width: 3.5vh;
+  }
+  .points b { color: #ffffff; }
+
+  /* ---------- Barre inférieure ---------- */
+  footer {
+    flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2vh 3vw 1.4vh 3vw; font-size: 1.7vh; color: var(--texte-attenué);
+    background: rgba(38, 50, 58, 0.55); border-top: 0.15vh solid rgba(229, 232, 233, 0.12);
+  }
+  .sources a { color: var(--texte-attenué); text-decoration: none; margin-right: 1.4vw; }
+  .sources a:hover { color: var(--seeb-rouge); }
+  .progression { display: flex; gap: 0.8vw; }
+  .pastille {
+    width: 2.4vh; height: 0.55vh; border-radius: 0.3vh;
+    background: rgba(229, 232, 233, 0.22); transition: background 0.5s;
+  }
+  .pastille.actif { background: var(--seeb-rouge); }
+
+  /* Image illustrative du thème (slide 1) — masquée proprement si absente */
+  .theme-image {
+    flex: 0 0 34%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 1.2vh;
+    border: 0.25vh solid rgba(229, 232, 233, 0.14);
+    box-shadow: 0 0.8vh 2.4vh rgba(0, 0, 0, 0.35);
+    align-self: stretch;
+  }
+
+  .logo-seeb {
+    display: inline-block; font-weight: 800; letter-spacing: 0.1em; color: var(--texte);
+  }
+  .logo-seeb span { color: var(--seeb-rouge); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="marque">
+    <div class="groupe">GROUPE <span class="rouge">SEEB</span></div>
+    <div class="service">Service Informatique · Veille cybersécurité</div>
+  </div>
+  <div class="horodatage">
+    <div class="titre">Briefing hebdomadaire</div>
+    <div class="semaine" id="semaine">Semaine du 5 au 12 novembre 2026</div>
+  </div>
+</header>
+
+<main>
+  <!-- Slide 1 : thème de la semaine -->
+  <section class="slide actif" data-slide>
+    <h1>🇮🇷 La France attribue à l'Iran <span class="rouge">le sabotage des chaînes du froid</span></h1>
+    <div class="sous-titre">Première cyberattaque de sabotage physique à cette échelle visant la France — réponse judiciaire et diplomatique engagée</div>
+    <div class="cartes">
+      <img class="theme-image" id="theme-image" src="seeb-image.jpg" alt="Illustration du thème de la semaine"
+           onerror="this.style.display='none'; this.closest('.cartes').style.flex='1 1 auto';" />
+      <div class="carte">
+        <h2>L'attaque</h2>
+        <p>Dans la nuit du <b>11 au 12 octobre</b>, les contrôleurs de réfrigération d'environ <b>700 supermarchés</b> français ont été pris pour cible : températures portées à <b>50&nbsp;°C</b>, pertes massives de marchandises, au moins <b>15 départs de feu</b>.</p>
+        <p>Attribution officielle à l'unité cyber <b>Shahid Kaveh</b> (Gardiens de la révolution iraniens) par l'ANSSI et le centre de crise C4.</p>
+        <div class="chiffre-cle">Supermarchés touchés en France<span class="valeur">≈ 700</span></div>
+      </div>
+      <div class="carte">
+        <h2>La riposte</h2>
+        <p><b>Mandats d'arrêts internationaux</b> requis contre deux responsables de l'unité ; ambassadeur d'Iran convoqué au Quai d'Orsay.</p>
+        <p>Le ministre des Affaires étrangères : la France <b>« ne s'interdit rien »</b>. L'UE se dit prête à une réponse <b>« rapide et unie »</b>, avec de nouvelles sanctions à l'étude.</p>
+        <div class="chiffre-cle">Pays européens touchés début novembre<span class="valeur">12</span></div>
+      </div>
+      <div class="carte">
+        <h2>Le contexte</h2>
+        <p>Des incidents similaires en <b>Belgique, Suède, Irlande, Estonie, Finlande, Italie, Pays-Bas…</b> ; Téhéran rejette « catégoriquement » les accusations.</p>
+        <p>L'ENISA alerte : <b>routeurs et électroménager</b> pourraient être les prochaines cibles des objets connectés mal sécurisés.</p>
+        <div class="chiffre-cle">Départs de feu constatés en France<span class="valeur">15+</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 2 : France -->
+  <section class="slide" data-slide>
+    <h1>🇫🇷 L'actualité en <span class="rouge">France</span></h1>
+    <div class="sous-titre">ANSSI, CERT-FR et grandes attaques de la semaine</div>
+    <div class="cartes">
+      <div class="carte">
+        <h2>ANSSI / CERT-FR</h2>
+        <p><b>Projet de loi cybersécurité</b> : la transposition de <b>NIS&nbsp;2</b> imposera de nouvelles obligations à plus de <b>18&nbsp;000 entités</b> dans 18 secteurs critiques. Vote solennel prévu le <b>17 novembre</b>.</p>
+        <p>L'article 16bis sur les messageries chiffrées a été retoqué par les députés.</p>
+        <div class="chiffre-cle">Entités concernées par NIS 2<span class="valeur">18 000+</span></div>
+      </div>
+      <div class="carte">
+        <h2>Établissement français du sang</h2>
+        <p>Cyberattaque contre des <b>chambres froides</b> via un prestataire frigorifique : paramètres de température altérés sur trois sites régionaux, <b>sans impact sanitaire</b>.</p>
+        <p>Enquête ouverte (OFAC, DGSI), audits coordonnés avec l'<b>ANSSI</b>.</p>
+        <div class="chiffre-cle">Sites régionaux concernés<span class="valeur">3</span></div>
+      </div>
+      <div class="carte">
+        <h2>Cybercriminalité financière</h2>
+        <p><b>Crédit Mutuel Arkéa</b> : plus de <b>100 M€ dérobés</b> (118 M€ selon la presse), partiellement récupérés — plus grosse attaque connue contre un acteur bancaire français.</p>
+        <p><b>Illicado</b> : 15 000 cartes-cadeaux compromises, remplacées sans perte pour les porteurs.</p>
+        <div class="chiffre-cle">Montant dérobé à Arkéa<span class="valeur">&gt; 100 M€</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 3 : International -->
+  <section class="slide" data-slide>
+    <h1>🌍 À l'<span class="rouge">international</span></h1>
+    <div class="sous-titre">La menace cyber s'intensifie partout : ripostes étatiques et régulation</div>
+    <div class="cartes">
+      <div class="carte">
+        <h2>Union européenne</h2>
+        <p>L'<b>ENISA</b> appelle à une sécurité <b>« by design »</b> : « Aujourd'hui les frigos, demain les routeurs, après-demain les appareils ménagers. » La cybersécurité « n'est pas bon marché ».</p>
+        <p>Le <b>Cyber Resilience Act</b> entrera pleinement en vigueur l'année prochaine.</p>
+        <div class="chiffre-cle">Ressources de l'ENISA (objectif UE)<span class="valeur">×2</span></div>
+      </div>
+      <div class="carte">
+        <h2>Japon</h2>
+        <p><b>Plan d'urgence de 10 milliards de yens</b> après une vague de fuites de données : IA défensive, « cyber-rescue teams », et défense cyber active légalisée en octobre.</p>
+        <p>Première équipe de simulation d'attaques déployable dès ce mois-ci.</p>
+        <div class="chiffre-cle">Enveloppe du plan d'urgence<span class="valeur">10 Md¥</span></div>
+      </div>
+      <div class="carte">
+        <h2>Suède & Australie</h2>
+        <p><b>Suède</b> : le gouvernement s'attend à une <b>recrudescence d'attaques</b> ; ~30 magasins visés, l'IA facilite la recherche de failles.</p>
+        <p><b>Australie</b> : création d'un <b>régulateur de la sécurité de l'IA</b> après l'intrusion d'un agent OpenAI dans un portail santé gouvernemental.</p>
+        <div class="chiffre-cle">Enquêtes de police en Suède<span class="valeur">22</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 4 : à retenir -->
+  <section class="slide" data-slide>
+    <h1>🔑 <span class="rouge">À retenir</span> cette semaine</h1>
+    <div class="sous-titre">Les quatre messages clés pour les équipes du Groupe SEEB</div>
+    <ul class="points">
+      <li><span class="num">1</span><div><b>Rupture stratégique</b> — premier sabotage physique à grande échelle attribué à un État : la menace cyber visait directement l'économie et les chaînes d'approvisionnement.</div></li>
+      <li><span class="num">2</span><div><b>NIS 2 arrive</b> — vote du 17 novembre : anticiper dès maintenant les obligations de gestion des risques, de sécurisation des sous-traitants et de notification des incidents.</div></li>
+      <li><span class="num">3</span><div><b>Objets connectés / OT</b> — la vague « frigos » montre le risque des équipements industriels et connectés mal sécurisés : inventorier, segmenter, mettre à jour.</div></li>
+      <li><span class="num">4</span><div><b>Comptes et flux financiers</b> — l'attaque Arkéa (&gt;100 M€ convertis en cryptomonnaies) rappelle l'importance des contrôles de flux et de la vigilance sur les transactions automatisées.</div></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="sources">
+    Sources : <a href="https://cyber.gouv.fr">ANSSI</a> · <a href="https://cert.ssi.gouv.fr">CERT-FR</a> · <a href="https://cybermalveillance.gouv.fr">cybermalveillance.gouv.fr</a> · presse AFP / AP (5–12 nov. 2026)
+  </div>
+  <div class="progression" id="progression"></div>
+  <div><span class="logo-seeb">GROUPE <span>SEEB</span></span> — Direction Informatique</div>
+</footer>
+
+<script>
+  // Horloge
+  function majHorloge() {
+    var s = document.getElementById("semaine");
+    var m = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+    var d = new Date();
+    s.textContent = "Semaine du 5 au 12 novembre 2026 — " +
+      d.getDate() + " " + m[d.getMonth()] + " " + d.getFullYear() + " · " +
+      d.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+  }
+  majHorloge();
+  setInterval(majHorloge, 30000);
+
+  // Rotation automatique des slides (15 s)
+  var slides = Array.prototype.slice.call(document.querySelectorAll("[data-slide]"));
+  var progression = document.getElementById("progression");
+  slides.forEach(function () {
+    var p = document.createElement("div");
+    p.className = "pastille";
+    progression.appendChild(p);
+  });
+  var pastilles = Array.prototype.slice.call(progression.children);
+  var index = 0;
+  function afficher(i) {
+    slides.forEach(function (s, j) { s.classList.toggle("actif", j === i); });
+    pastilles.forEach(function (p, j) { p.classList.toggle("actif", j === i); });
+  }
+  afficher(0);
+  setInterval(function () {
+    index = (index + 1) % slides.length;
+    afficher(index);
+  }, 15000);
+</script>
+</body>
+</html>
