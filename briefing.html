@@ -7,134 +7,220 @@
 <style>
   :root {
     --seeb-rouge: #f52b03;
+    --seeb-rouge-clair: #ff6a45;
     --seeb-anthracite: #32434b;
     --seeb-anthracite-fonce: #26323a;
     --seeb-gris-clair: #e5e8e9;
     --seeb-gris-doux: #475b64;
     --texte: #f3f5f6;
     --texte-attenué: #b8c2c7;
+    --verre: rgba(255, 255, 255, 0.055);
+    --verre-bord: rgba(229, 232, 233, 0.14);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { height: 100%; overflow: hidden; }
   body {
     font-family: "Segoe UI", "Calibri", system-ui, sans-serif;
-    background: linear-gradient(160deg, var(--seeb-anthracite-fonce) 0%, var(--seeb-anthracite) 55%, #3a4d56 100%);
     color: var(--texte);
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
+    background:
+      radial-gradient(120vw 70vh at 85% -10%, rgba(245, 43, 3, 0.13), transparent 55%),
+      radial-gradient(90vw 60vh at -10% 110%, rgba(71, 91, 100, 0.35), transparent 60%),
+      linear-gradient(160deg, #1e282e 0%, var(--seeb-anthracite-fonce) 40%, var(--seeb-anthracite) 75%, #3a4d56 100%);
+  }
+  /* Trame discrète en arrière-plan */
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(229, 232, 233, 0.028) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(229, 232, 233, 0.028) 1px, transparent 1px);
+    background-size: 6vh 6vh;
   }
 
   /* ---------- Bandeau supérieur ---------- */
   header {
+    position: relative; z-index: 2;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.6vh 3vw 1.2vh 3vw;
-    border-bottom: 0.5vh solid var(--seeb-rouge);
-    background: rgba(38, 50, 58, 0.55);
+    padding: 1.7vh 3vw 1.4vh 3vw;
+    background: rgba(30, 40, 46, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 0.12vh solid rgba(229, 232, 233, 0.10);
     flex: 0 0 auto;
   }
-  .marque { display: flex; align-items: baseline; gap: 1.2vw; }
-  .marque .groupe { font-size: 3.4vh; font-weight: 800; letter-spacing: 0.12em; }
-  .marque .groupe .rouge { color: var(--seeb-rouge); }
-  .marque .service { font-size: 1.9vh; color: var(--texte-attenué); letter-spacing: 0.22em; text-transform: uppercase; }
-  .horodatage { text-align: right; }
-  .horodatage .titre { font-size: 1.9vh; color: var(--seeb-rouge); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
-  .horodatage .semaine { font-size: 1.7vh; color: var(--texte-attenué); margin-top: 0.4vh; }
+  header::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -0.12vh; height: 0.4vh;
+    background: linear-gradient(90deg,
+      var(--seeb-rouge) 0%, var(--seeb-rouge-clair) 28%,
+      rgba(245, 43, 3, 0.25) 65%, transparent 100%);
+  }
+  .marque { display: flex; align-items: center; gap: 1.1vw; }
+  .sigle {
+    width: 5.2vh; height: 5.2vh; border-radius: 1.1vh;
+    background: linear-gradient(145deg, var(--seeb-rouge), #c31f00);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.6vh; font-weight: 800; color: #fff;
+    box-shadow: 0 0.6vh 1.8vh rgba(245, 43, 3, 0.35);
+    flex: 0 0 auto;
+  }
+  .marque-texte { display: flex; flex-direction: column; gap: 0.3vh; }
+  .marque .groupe { font-size: 3vh; font-weight: 800; letter-spacing: 0.14em; line-height: 1; }
+  .marque .groupe .rouge { color: var(--seeb-rouge-clair); }
+  .marque .service { font-size: 1.55vh; color: var(--texte-attenué); letter-spacing: 0.2em; text-transform: uppercase; }
+  .horodatage { text-align: right; display: flex; flex-direction: column; gap: 0.5vh; align-items: flex-end; }
+  .badge-direct {
+    display: inline-flex; align-items: center; gap: 0.7vh;
+    font-size: 1.5vh; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--seeb-rouge-clair);
+    background: rgba(245, 43, 3, 0.12); border: 0.15vh solid rgba(245, 43, 3, 0.35);
+    padding: 0.5vh 1vh; border-radius: 10vh;
+  }
+  .badge-direct .point {
+    width: 1vh; height: 1vh; border-radius: 50%;
+    background: var(--seeb-rouge);
+    animation: pulsation 2s ease-in-out infinite;
+  }
+  @keyframes pulsation {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(245, 43, 3, 0.5); }
+    50%      { opacity: 0.55; box-shadow: 0 0 0 0.7vh rgba(245, 43, 3, 0); }
+  }
+  .horodatage .semaine { font-size: 1.7vh; color: var(--texte-attenué); }
 
   /* ---------- Zone principale ---------- */
-  main { flex: 1 1 auto; position: relative; padding: 2.2vh 3vw 0 3vw; overflow: hidden; }
+  main { flex: 1 1 auto; position: relative; overflow: hidden; }
   .slide {
-    position: absolute; inset: 2.2vh 3vw 0 3vw;
-    opacity: 0; transform: translateY(2.4vh);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    position: absolute; inset: 2.4vh 3vw 0 3vw;
+    opacity: 0; transform: translateY(2.2vh) scale(0.985);
+    transition: opacity 0.75s cubic-bezier(.2,.7,.3,1), transform 0.75s cubic-bezier(.2,.7,.3,1);
     display: flex; flex-direction: column;
+    pointer-events: none;
   }
-  .slide.actif { opacity: 1; transform: translateY(0); }
+  .slide.actif { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
 
   .slide h1 {
-    font-size: 4.6vh; line-height: 1.18; font-weight: 800; margin-bottom: 1vh;
+    font-size: 4.4vh; line-height: 1.16; font-weight: 800; margin-bottom: 1.1vh;
+    letter-spacing: -0.01em;
+    text-shadow: 0 0.3vh 1vh rgba(0, 0, 0, 0.35);
   }
-  .slide h1 .rouge { color: var(--seeb-rouge); }
-  .slide .sous-titre { font-size: 2.1vh; color: var(--texte-attenué); margin-bottom: 2.2vh; }
+  .slide h1 .rouge { color: var(--seeb-rouge-clair); }
+  .slide .sous-titre {
+    font-size: 2.05vh; color: var(--texte-attenué); margin-bottom: 2.4vh;
+    display: flex; align-items: center; gap: 1vh;
+  }
+  .slide .sous-titre::before {
+    content: ""; width: 2.6vh; height: 0.3vh; border-radius: 0.3vh;
+    background: linear-gradient(90deg, var(--seeb-rouge), var(--seeb-rouge-clair));
+    flex: 0 0 auto;
+  }
 
-  .cartes { display: flex; gap: 1.6vw; flex: 1 1 auto; min-height: 0; }
+  .cartes { display: flex; gap: 1.5vw; flex: 1 1 auto; min-height: 0; }
   .carte {
-    flex: 1; background: rgba(255, 255, 255, 0.05);
-    border: 0.25vh solid rgba(229, 232, 233, 0.14);
-    border-top: 0.6vh solid var(--seeb-rouge);
-    border-radius: 1.2vh; padding: 2.2vh 1.4vw;
+    flex: 1; position: relative;
+    background: var(--verre);
+    border: 0.12vh solid var(--verre-bord);
+    border-radius: 1.4vh; padding: 2.4vh 1.5vw;
     display: flex; flex-direction: column;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1vh 3vh rgba(0, 0, 0, 0.25), inset 0 0.12vh 0 rgba(255, 255, 255, 0.07);
+    overflow: hidden;
+  }
+  .carte::before {
+    content: ""; position: absolute; top: 0; left: 1.8vh; right: 1.8vh; height: 0.5vh;
+    background: linear-gradient(90deg, var(--seeb-rouge), var(--seeb-rouge-clair));
+    border-radius: 0 0 1vh 1vh;
   }
   .carte h2 {
-    font-size: 2.3vh; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--seeb-rouge); font-weight: 700; margin-bottom: 1.2vh;
+    font-size: 2.2vh; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--seeb-rouge-clair); font-weight: 700; margin: 0.4vh 0 1.4vh 0;
+    display: flex; align-items: center; gap: 0.9vh;
   }
-  .carte p { font-size: 1.95vh; line-height: 1.45; color: var(--texte); }
+  .carte h2::after {
+    content: ""; flex: 1 1 auto; height: 0.12vh;
+    background: linear-gradient(90deg, rgba(245, 43, 3, 0.45), transparent);
+  }
+  .carte p { font-size: 1.95vh; line-height: 1.48; color: #e8edef; }
   .carte p + p { margin-top: 1.2vh; }
   .carte b { color: #ffffff; }
   .chiffre-cle {
-    margin-top: auto; padding-top: 1.6vh;
-    border-top: 0.15vh solid rgba(229, 232, 233, 0.18);
-    font-size: 1.8vh; color: var(--texte-attenué);
+    margin-top: auto; padding-top: 1.5vh;
+    border-top: 0.12vh solid rgba(229, 232, 233, 0.14);
+    font-size: 1.75vh; color: var(--texte-attenué);
   }
   .chiffre-cle .valeur {
-    display: block; font-size: 3.6vh; font-weight: 800; color: var(--seeb-rouge); line-height: 1.1;
+    display: block; font-size: 4.2vh; font-weight: 800; line-height: 1.15; margin-top: 0.2vh;
+    background: linear-gradient(120deg, #ffffff 15%, var(--seeb-rouge-clair) 65%, var(--seeb-rouge) 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: var(--seeb-rouge-clair);
+    letter-spacing: 0.01em;
   }
 
   /* Liste "à retenir" */
-  .points { list-style: none; display: flex; flex-direction: column; gap: 1.6vh; }
+  .points { list-style: none; display: flex; flex-direction: column; gap: 1.7vh; }
   .points li {
-    display: flex; align-items: flex-start; gap: 1.2vw;
-    background: rgba(255, 255, 255, 0.05);
+    display: flex; align-items: center; gap: 1.3vw;
+    background: var(--verre);
+    border: 0.12vh solid var(--verre-bord);
     border-left: 0.7vh solid var(--seeb-rouge);
-    border-radius: 0 0.8vh 0.8vh 0; padding: 1.8vh 1.4vw;
-    font-size: 2.15vh; line-height: 1.4;
+    border-radius: 0 1.1vh 1.1vh 0; padding: 1.9vh 1.5vw;
+    font-size: 2.1vh; line-height: 1.42;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0.8vh 2.4vh rgba(0, 0, 0, 0.22);
   }
   .points .num {
-    font-size: 3.2vh; font-weight: 800; color: var(--seeb-rouge); line-height: 1; min-width: 3.5vh;
+    width: 5.4vh; height: 5.4vh; flex: 0 0 auto;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.6vh; font-weight: 800; color: #fff;
+    background: linear-gradient(145deg, var(--seeb-rouge), #c31f00);
+    border-radius: 50%;
+    box-shadow: 0 0.5vh 1.6vh rgba(245, 43, 3, 0.35);
   }
   .points b { color: #ffffff; }
 
   /* ---------- Barre inférieure ---------- */
   footer {
-    flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2vh 3vw 1.4vh 3vw; font-size: 1.7vh; color: var(--texte-attenué);
-    background: rgba(38, 50, 58, 0.55); border-top: 0.15vh solid rgba(229, 232, 233, 0.12);
+    position: relative; z-index: 2;
+    flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2vw;
+    padding: 1.25vh 3vw 1.45vh 3vw; font-size: 1.65vh; color: var(--texte-attenué);
+    background: rgba(30, 40, 46, 0.6);
+    backdrop-filter: blur(10px);
+    border-top: 0.12vh solid rgba(229, 232, 233, 0.10);
   }
   .sources a { color: var(--texte-attenué); text-decoration: none; margin-right: 1.4vw; }
-  .sources a:hover { color: var(--seeb-rouge); }
-  .progression { display: flex; gap: 0.8vw; }
+  .progression { display: flex; gap: 0.7vw; align-items: center; }
   .pastille {
-    width: 2.4vh; height: 0.55vh; border-radius: 0.3vh;
-    background: rgba(229, 232, 233, 0.22); transition: background 0.5s;
+    width: 3vh; height: 0.5vh; border-radius: 0.3vh;
+    background: rgba(229, 232, 233, 0.18); transition: background 0.5s, box-shadow 0.5s;
   }
-  .pastille.actif { background: var(--seeb-rouge); }
+  .pastille.actif {
+    background: linear-gradient(90deg, var(--seeb-rouge), var(--seeb-rouge-clair));
+    box-shadow: 0 0 1vh rgba(245, 43, 3, 0.55);
+  }
+  .logo-seeb { display: inline-block; font-weight: 800; letter-spacing: 0.1em; color: var(--texte); }
+  .logo-seeb span { color: var(--seeb-rouge-clair); }
 
   /* Image illustrative du thème (slide 1) — masquée proprement si absente */
   .theme-image {
-    flex: 0 0 34%;
-    max-height: 100%;
-    object-fit: cover;
-    border-radius: 1.2vh;
-    border: 0.25vh solid rgba(229, 232, 233, 0.14);
-    box-shadow: 0 0.8vh 2.4vh rgba(0, 0, 0, 0.35);
+    flex: 0 0 33%;
+    max-height: 100%; width: 33%; object-fit: cover;
+    border-radius: 1.4vh;
+    border: 0.12vh solid var(--verre-bord);
+    box-shadow: 0 1.2vh 3.2vh rgba(0, 0, 0, 0.45), inset 0 0 0 0.25vh rgba(255,255,255,0.05);
     align-self: stretch;
+    filter: saturate(1.05) contrast(1.03);
   }
-
-  .logo-seeb {
-    display: inline-block; font-weight: 800; letter-spacing: 0.1em; color: var(--texte);
-  }
-  .logo-seeb span { color: var(--seeb-rouge); }
 </style>
 </head>
 <body>
 
 <header>
   <div class="marque">
-    <div class="groupe">GROUPE <span class="rouge">SEEB</span></div>
-    <div class="service">Service Informatique · Veille cybersécurité</div>
+    <div class="sigle">S</div>
+    <div class="marque-texte">
+      <div class="groupe">GROUPE <span class="rouge">SEEB</span></div>
+      <div class="service">Service Informatique · Veille cybersécurité</div>
+    </div>
   </div>
   <div class="horodatage">
-    <div class="titre">Briefing hebdomadaire</div>
+    <div class="badge-direct"><span class="point"></span>Briefing hebdomadaire</div>
     <div class="semaine" id="semaine">Semaine du 5 au 12 novembre 2026</div>
   </div>
 </header>
