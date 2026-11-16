@@ -211,35 +211,35 @@
   </div>
   <div class="horodatage">
     <div class="badge-direct"><span class="point"></span>Briefing hebdomadaire</div>
-    <div class="semaine" id="semaine">Semaine du 5 au 12 novembre 2026</div>
+    <div class="semaine" id="semaine">Semaine du 9 au 16 novembre 2026</div>
   </div>
 </header>
 
 <main>
   <!-- Slide 1 : thème de la semaine -->
   <section class="slide actif" data-slide>
-    <h1>🇮🇷 La France attribue à l'Iran <span class="rouge">le sabotage des chaînes du froid</span></h1>
-    <div class="sous-titre">Première cyberattaque de sabotage physique à cette échelle visant la France — réponse judiciaire et diplomatique engagée</div>
+    <h1>🛡️ Une vague de <span class="rouge">correctifs urgents</span> à appliquer sans tarder</h1>
+    <div class="sous-titre">Chrome, PHP « PHP2Shell », Apache, Patch Tuesday : des vulnérabilités activement exploitées dans la nature</div>
     <div class="cartes">
-      <img class="theme-image" id="theme-image" src="seeb-image.jpg" alt="Illustration du thème de la semaine"
+      <img class="theme-image" id="theme-image" src="image-hebdo.jpg" alt="Illustration du thème de la semaine"
            onerror="this.style.display='none'; this.closest('.cartes').style.flex='1 1 auto';" />
       <div class="carte">
-        <h2>L'attaque</h2>
-        <p>Dans la nuit du <b>11 au 12 octobre</b>, les contrôleurs de réfrigération d'environ <b>700 supermarchés</b> français ont été pris pour cible : températures portées à <b>50&nbsp;°C</b>, pertes massives de marchandises, au moins <b>15 départs de feu</b>.</p>
-        <p>Attribution officielle à l'unité cyber <b>Shahid Kaveh</b> (Gardiens de la révolution iraniens) par l'ANSSI et le centre de crise C4.</p>
-        <div class="chiffre-cle">Supermarchés touchés en France<span class="valeur">≈ 700</span></div>
+        <h2>Chrome</h2>
+        <p>Le CERT-FR a publié le <b>10 novembre</b> un avis sur des vulnérabilités de Google Chrome <b>activement exploitées</b>, dont <b>CVE-2026-125350</b> (use-after-free dans le composant XML, CVSS <b>8,8/10</b>).</p>
+        <p>Mise à jour urgente vers <b>Chrome 157.0.8103.50/51</b> sur les postes de travail.</p>
+        <div class="chiffre-cle">Gravité CVSS de la faille Chrome<span class="valeur">8,8</span></div>
       </div>
       <div class="carte">
-        <h2>La riposte</h2>
-        <p><b>Mandats d'arrêts internationaux</b> requis contre deux responsables de l'unité ; ambassadeur d'Iran convoqué au Quai d'Orsay.</p>
-        <p>Le ministre des Affaires étrangères : la France <b>« ne s'interdit rien »</b>. L'UE se dit prête à une réponse <b>« rapide et unie »</b>, avec de nouvelles sanctions à l'étude.</p>
-        <div class="chiffre-cle">Pays européens touchés début novembre<span class="valeur">12</span></div>
+        <h2>PHP « PHP2Shell »</h2>
+        <p>Deux failles critiques PHP (CVE-2026-109618/109619) permettent une <b>exécution de code à distance sans authentification</b> ; exploitation confirmée par la CISA.</p>
+        <p>Enchaînées avec une faille du noyau Linux, elles ont permis de compromettre <b>25 pare-feu</b> Palo Alto aux États-Unis, au Japon, à Taïwan et en Corée du Sud.</p>
+        <div class="chiffre-cle">Pare-feu compromis via PHP2Shell<span class="valeur">25</span></div>
       </div>
       <div class="carte">
-        <h2>Le contexte</h2>
-        <p>Des incidents similaires en <b>Belgique, Suède, Irlande, Estonie, Finlande, Italie, Pays-Bas…</b> ; Téhéran rejette « catégoriquement » les accusations.</p>
-        <p>L'ENISA alerte : <b>routeurs et électroménager</b> pourraient être les prochaines cibles des objets connectés mal sécurisés.</p>
-        <div class="chiffre-cle">Départs de feu constatés en France<span class="valeur">15+</span></div>
+        <h2>Patch Tuesday</h2>
+        <p>Microsoft a déployé un correctif mensuel d'ampleur inédite : près de <b>1 100 failles</b> corrigées dans Windows et Office, dont <b>au moins une déjà exploitée</b>.</p>
+        <p>Apache a également publié <b>2.4.71</b> le 11 novembre, corrigeant la faille critique CVE-2026-119618 (mod_http2).</p>
+        <div class="chiffre-cle">Failles corrigées par Microsoft<span class="valeur">≈ 1 100</span></div>
       </div>
     </div>
   </section>
@@ -250,22 +250,22 @@
     <div class="sous-titre">ANSSI, CERT-FR et grandes attaques de la semaine</div>
     <div class="cartes">
       <div class="carte">
-        <h2>ANSSI / CERT-FR</h2>
-        <p><b>Projet de loi cybersécurité</b> : la transposition de <b>NIS&nbsp;2</b> imposera de nouvelles obligations à plus de <b>18&nbsp;000 entités</b> dans 18 secteurs critiques. Vote solennel prévu le <b>17 novembre</b>.</p>
-        <p>L'article 16bis sur les messageries chiffrées a été retoqué par les députés.</p>
-        <div class="chiffre-cle">Entités concernées par NIS 2<span class="valeur">18 000+</span></div>
+        <h2>NIS 2 adopté</h2>
+        <p>L'Assemblée nationale a <b>adopté la transposition</b> de NIS 2, réécrite contre l'avis du gouvernement : <b>15 000 à 18 000 entités</b> concernées dans 18 secteurs critiques.</p>
+        <p>Notification des incidents en trois temps : <b>alerte sous 24 h, notification sous 72 h, rapport final sous un mois</b> ; périmètre de contrôle de l'ANSSI « multiplié par 30 ».</p>
+        <div class="chiffre-cle">Entités concernées par NIS 2<span class="valeur">18 000</span></div>
       </div>
       <div class="carte">
-        <h2>Établissement français du sang</h2>
-        <p>Cyberattaque contre des <b>chambres froides</b> via un prestataire frigorifique : paramètres de température altérés sur trois sites régionaux, <b>sans impact sanitaire</b>.</p>
-        <p>Enquête ouverte (OFAC, DGSI), audits coordonnés avec l'<b>ANSSI</b>.</p>
-        <div class="chiffre-cle">Sites régionaux concernés<span class="valeur">3</span></div>
+        <h2>CERT-FR / REACTIV</h2>
+        <p>Avis du CERT-FR sur <b>Chrome</b> (10 nov.) et <b>Mattermost Server</b> (6 nov.) ; bulletin d'actualité CERTFR-2026-ACT-047 (9 nov.) sur les vulnérabilités significatives.</p>
+        <p>L'opération <b>REACTIV</b> publie son point d'octobre : capacité renforcée de l'ANSSI face aux vols de données touchant les services de l'État.</p>
+        <div class="chiffre-cle">Notification NIS 2 — alerte<span class="valeur">24 h</span></div>
       </div>
       <div class="carte">
-        <h2>Cybercriminalité financière</h2>
-        <p><b>Crédit Mutuel Arkéa</b> : plus de <b>100 M€ dérobés</b> (118 M€ selon la presse), partiellement récupérés — plus grosse attaque connue contre un acteur bancaire français.</p>
-        <p><b>Illicado</b> : 15 000 cartes-cadeaux compromises, remplacées sans perte pour les porteurs.</p>
-        <div class="chiffre-cle">Montant dérobé à Arkéa<span class="valeur">&gt; 100 M€</span></div>
+        <h2>Incidents en France</h2>
+        <p><b>Chaînes du froid</b> : attribution officielle à l'unité Shahid Kaveh confirmée ; <b>3 centres de transfusion sanguine</b> touchés par la vague européenne de novembre.</p>
+        <p><b>SGS / contrôle technique</b> : incident confirmé, clients informés — vigilance contre les SMS d'amendes frauduleux ; 1001RDV et ARTE également visés.</p>
+        <div class="chiffre-cle">Sites de distribution touchés (oct.)<span class="valeur">≈ 700</span></div>
       </div>
     </div>
   </section>
@@ -273,25 +273,25 @@
   <!-- Slide 3 : International -->
   <section class="slide" data-slide>
     <h1>🌍 À l'<span class="rouge">international</span></h1>
-    <div class="sous-titre">La menace cyber s'intensifie partout : ripostes étatiques et régulation</div>
+    <div class="sous-titre">Exploitation active, espionnage et attaques assistées par IA</div>
     <div class="cartes">
       <div class="carte">
-        <h2>Union européenne</h2>
-        <p>L'<b>ENISA</b> appelle à une sécurité <b>« by design »</b> : « Aujourd'hui les frigos, demain les routeurs, après-demain les appareils ménagers. » La cybersécurité « n'est pas bon marché ».</p>
-        <p>Le <b>Cyber Resilience Act</b> entrera pleinement en vigueur l'année prochaine.</p>
-        <div class="chiffre-cle">Ressources de l'ENISA (objectif UE)<span class="valeur">×2</span></div>
+        <h2>Exploitations actives</h2>
+        <p>La CISA a ajouté <b>UnrealIRCd</b> à son catalogue KEV (exploitation confirmée) ; des pare-feu <b>Check Point</b> non corrigés visés via PHP2Shell pour déployer le backdoor <b>TSGA</b>.</p>
+        <p><b>Apache 2.4.71</b> publié le 11 novembre corrige la faille critique CVE-2026-119618 (mod_http2).</p>
+        <div class="chiffre-cle">Failles Microsoft corrigées ce mois<span class="valeur">≈ 1 100</span></div>
       </div>
       <div class="carte">
-        <h2>Japon</h2>
-        <p><b>Plan d'urgence de 10 milliards de yens</b> après une vague de fuites de données : IA défensive, « cyber-rescue teams », et défense cyber active légalisée en octobre.</p>
-        <p>Première équipe de simulation d'attaques déployable dès ce mois-ci.</p>
-        <div class="chiffre-cle">Enveloppe du plan d'urgence<span class="valeur">10 Md¥</span></div>
+        <h2>Espionnage SilentAir</h2>
+        <p>Un groupe d'espionnage, baptisé <b>SilentAir</b> par Enea, a intercepté appels et SMS de personnes ciblées via des <b>équipements piratés d'opérateurs mobiles asiatiques</b>.</p>
+        <p>Sources d'attaque identifiées dans <b>au moins six pays</b> d'Asie.</p>
+        <div class="chiffre-cle">Pays d'où proviennent les attaques<span class="valeur">6+</span></div>
       </div>
       <div class="carte">
-        <h2>Suède & Australie</h2>
-        <p><b>Suède</b> : le gouvernement s'attend à une <b>recrudescence d'attaques</b> ; ~30 magasins visés, l'IA facilite la recherche de failles.</p>
-        <p><b>Australie</b> : création d'un <b>régulateur de la sécurité de l'IA</b> après l'intrusion d'un agent OpenAI dans un portail santé gouvernemental.</p>
-        <div class="chiffre-cle">Enquêtes de police en Suède<span class="valeur">22</span></div>
+        <h2>Attaques assistées par IA</h2>
+        <p>Le framework de test d'intrusion IA <b>ARTEX</b> a été utilisé par des attaquants contre <b>plus de 200 organisations</b> dans 14 pays.</p>
+        <p>La vague d'attaques contre les <b>systèmes de réfrigération</b> s'étend en Belgique, Suède, Estonie, Luxembourg et au Portugal.</p>
+        <div class="chiffre-cle">Organisations visées via ARTEX<span class="valeur">200+</span></div>
       </div>
     </div>
   </section>
@@ -301,17 +301,17 @@
     <h1>🔑 <span class="rouge">À retenir</span> cette semaine</h1>
     <div class="sous-titre">Les quatre messages clés de la semaine</div>
     <ul class="points">
-      <li><span class="num">1</span><div><b>Rupture stratégique</b> — premier sabotage physique à grande échelle attribué à un État : la menace cyber visait directement l'économie et les chaînes d'approvisionnement.</div></li>
-      <li><span class="num">2</span><div><b>NIS 2 arrive</b> — vote du 17 novembre : anticiper dès maintenant les obligations de gestion des risques, de sécurisation des sous-traitants et de notification des incidents.</div></li>
-      <li><span class="num">3</span><div><b>Objets connectés / OT</b> — la vague « frigos » montre le risque des équipements industriels et connectés mal sécurisés : inventorier, segmenter, mettre à jour.</div></li>
-      <li><span class="num">4</span><div><b>Comptes et flux financiers</b> — l'attaque Arkéa (&gt;100 M€ convertis en cryptomonnaies) rappelle l'importance des contrôles de flux et de la vigilance sur les transactions automatisées.</div></li>
+      <li><span class="num">1</span><div><b>Patcher immédiatement</b> — Chrome (CVE-2026-125350 exploitée), PHP, Apache et Mattermost font l'objet d'exploitations documentées : appliquer les correctifs en priorité absolue.</div></li>
+      <li><span class="num">2</span><div><b>NIS 2 adopté</b> — 15 000 à 18 000 entités françaises doivent se préparer dès maintenant : gestion des risques, sous-traitants, notification 24 h / 72 h / 1 mois.</div></li>
+      <li><span class="num">3</span><div><b>Sabotage industriel confirmé</b> — l'attribution de l'attaque des chaînes du froid acte la menace OT : inventorier, segmenter et surveiller les équipements industriels connectés.</div></li>
+      <li><span class="num">4</span><div><b>Réflexes de protection</b> — 45 % des Français ont été notifiés d'une fuite de données : MFA, mots de passe uniques et vigilance renforcée face aux arnaques de fin d'année.</div></li>
     </ul>
   </section>
 </main>
 
 <footer>
   <div class="sources">
-    Sources : <a href="https://cyber.gouv.fr">ANSSI</a> · <a href="https://cert.ssi.gouv.fr">CERT-FR</a> · <a href="https://cybermalveillance.gouv.fr">cybermalveillance.gouv.fr</a> · presse AFP / AP (5–12 nov. 2026)
+    Sources : <a href="https://cyber.gouv.fr">ANSSI</a> · <a href="https://cert.ssi.gouv.fr">CERT-FR</a> · <a href="https://cybermalveillance.gouv.fr">cybermalveillance.gouv.fr</a> · presse spécialisée FR/EN (9–16 nov. 2026)
   </div>
   <div class="progression" id="progression"></div>
   <div><span class="logo-veille">VEILLE <span>CYBERSÉCURITÉ</span></span></div>
@@ -323,7 +323,7 @@
     var s = document.getElementById("semaine");
     var m = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
     var d = new Date();
-    s.textContent = "Semaine du 5 au 12 novembre 2026 — " +
+    s.textContent = "Semaine du 9 au 16 novembre 2026 — " +
       d.getDate() + " " + m[d.getMonth()] + " " + d.getFullYear() + " · " +
       d.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
   }
