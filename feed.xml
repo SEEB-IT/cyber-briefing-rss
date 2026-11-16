@@ -5,7 +5,54 @@
     <link>https://groupeseeb.sharepoint.com/it/SitePages/CollabHome.aspx</link>
     <description>Briefing hebdomadaire de l'actualité cybersécurité en France et dans le monde : recommandations ANSSI, alertes CERT-FR, cybermalveillance.gouv.fr, grandes attaques internationales.</description>
     <language>fr</language>
-    <lastBuildDate>Thu, 12 Nov 2026 13:24:28 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 10:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Briefing cybersécurité — semaine du 9 au 16 novembre 2026 : la vague de correctifs urgents</title>
+      <link>https://groupeseeb.sharepoint.com/it/Documents%20partages/Flux%20RSS%20Cybers%C3%A9curit%C3%A9/feed.xml</link>
+      <guid isPermaLink="false">cyber-briefing-2026-11-16</guid>
+      <pubDate>Mon, 16 Nov 2026 08:00:00 +0100</pubDate>
+      <description><![CDATA[
+<h2>🛡️ Thème de la semaine : une vague de correctifs urgents à appliquer sans tarder</h2>
+<p>La semaine a été marquée par une série de vulnérabilités <b>activement exploitées</b> : faille <b>Chrome</b> signalée par le CERT-FR, failles critiques <b>PHP (« PHP2Shell »)</b> à l'origine de compromissions de pare-feu, et un <b>Patch Tuesday Microsoft</b> d'une ampleur inédite avec près de 1 100 failles corrigées. Le message de la semaine : <b>mettre à jour sans attendre</b> les navigateurs, serveurs web et environnements PHP.</p>
+<h2>🇫🇷 ANSSI / CERT-FR et institutions</h2>
+<ul>
+<li><b>CERT-FR — Chrome</b> : avis du 10 novembre sur des vulnérabilités de Google Chrome <b>activement exploitées</b>, dont <b>CVE-2026-125350</b> (use-after-free dans le composant XML, CVSS 8.8) ; mise à jour urgente vers Chrome 157.0.8103.50/51 (article : <a href="https://armees.com/chrome-faille-exploitee-cve-2026-125350-cert-fr-111126-presedd-1740/">Armees.com</a>).</li>
+<li><b>CERT-FR — Mattermost Server</b> : avis CERTFR-2026-AVI-1479 du 6 novembre sur plusieurs vulnérabilités ; versions 11.x et 12.x à corriger selon la branche installée (article : <a href="https://armees.com/cert-fr-mattermost-server-vulnerabilites-6-novembre-2026-1479/">Armees.com</a>).</li>
+<li><b>Bulletin d'actualité CERTFR-2026-ACT-047</b> (9 novembre) : panorama des vulnérabilités significatives de la semaine (<a href="https://www.globalsecuritymag.com/bulletin-d-actualite-certfr-2026-act-047-09-novembre-2026.html">Global Security Mag</a>).</li>
+<li><b>Opération REACTIV</b> : point de situation d'octobre publié le 12 novembre — capacité renforcée de l'ANSSI face aux violations de données touchant les services de l'État (<a href="https://www.kortex-consulting.com/point-de-situation-de-loperation-reactiv-octobre-2026-12-novembre-2026-cert-fr/">Kortex Consulting</a>).</li>
+<li><b>NIS 2</b> : l'Assemblée nationale a <b>adopté la transposition</b> de la directive, réécrite contre l'avis du gouvernement : 15 000 à 18 000 entités concernées, notification des incidents en trois temps (alerte sous 24 h, notification sous 72 h, rapport final sous un mois), périmètre de contrôle de l'ANSSI « multiplié par 30 » (<a href="https://www.journaldunet.com/cybersecurite/1557881-nis2-l-assemblee-adopte-enfin-la-transposition-et-la-reecrit-contre-l-avis-du-gouvernement/">Journal du Net</a>).</li>
+</ul>
+<h2>🛰️ Cybermalveillance.gouv.fr</h2>
+<ul>
+<li><b>AlerteCyber « PHP2Shell »</b> : failles de sécurité critiques dans PHP (CVE-2026-109618 et CVE-2026-109619), exploitation confirmée par la CISA ; risques de prise de contrôle à distance, exfiltration et destruction de données. Entreprises, collectivités et associations invitées à <b>mettre à jour leurs systèmes sans tarder</b> (<a href="https://www.cybermalveillance.gouv.fr/">cybermalveillance.gouv.fr</a>, <a href="https://safecode.fr/php2shell-failles-php-cve-2026-109618-palo-alto/">Safecode</a>).</li>
+<li><b>Cybermois 2026</b> : près d'un Français sur deux (45 %, contre 30 % en 2025) a été informé d'une fuite de ses données personnelles au cours des 12 derniers mois ; sollicitations du 17Cyber en hausse de 14 % (<a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/cp-cybermois-2026">communiqué</a>).</li>
+<li><b>Black Friday</b> : 7 conseils pour éviter les cyber-arnaques pendant les périodes promotionnelles (<a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/7-conseils-pour-eviter-les-cyberescroqueries">cybermalveillance.gouv.fr</a>).</li>
+</ul>
+<h2>🏦 France : actualités</h2>
+<ul>
+<li><b>Attribution de l'attaque des chaînes du froid</b> : la France a officiellement attribué à l'unité cyber Shahid Kaveh (CGRI) le sabotage d'environ 700 sites de grande distribution ; mandats d'arrêts internationaux requis, l'Iran rejette les accusations ; trois centres de transfusion sanguine français touchés par la vague européenne (<a href="https://information.tv5monde.com/international/cyberattaque-contre-les-supermarches-en-france-comment-les-enqueteurs-sont-remontes-jusqua-liran-2845271">TV5MONDE</a>).</li>
+<li><b>SGS / contrôle technique</b> : incident de cybersécurité confirmé, clients informés d'une exposition de données ; vigilance renforcée contre les SMS frauduleux imitant des amendes (<a href="https://lautomobiliste.fr/15/11/2026/securitest-sgs-incident-cybersecurite-fausses-amendes-2026/">L'Automobiliste</a>).</li>
+<li><b>Autres incidents</b> : plateforme de rendez-vous médicaux 1001RDV visée le 12 novembre, base de données attribuée à ARTE diffusée le 11 novembre (<a href="https://www.cyberattaque.org/">Cyberattaque.org</a>).</li>
+</ul>
+<h2>🌍 Monde : actualités internationales</h2>
+<ul>
+<li><b>Microsoft Patch Tuesday</b> : correctif mensuel d'ampleur inédite — près de 1 100 failles traitées, dont au moins une déjà exploitée (<a href="https://kohenavocats.com/faille-critique-serveur-site-mise-a-jour-notification-cnil-recours-2026/">analyse</a>).</li>
+<li><b>Apache HTTP Server</b> : version 2.4.71 publiée le 11 novembre corrigeant notamment la vulnérabilité critique CVE-2026-119618 (exécution de code à distance dans mod_http2).</li>
+<li><b>SilentAir</b> : un groupe d'espionnage a intercepté appels et SMS via des équipements piratés d'opérateurs mobiles asiatiques ; sources d'attaque identifiées dans au moins six pays (<a href="https://thehackernews.com/">The Hacker News</a>).</li>
+<li><b>Pare-feu Check Point</b> : exploitation de la chaîne PHP2Shell + faille d'élévation de privilèges Gaia OS pour déployer le backdoor TSGA (<a href="https://thehackernews.com/">The Hacker News</a>).</li>
+<li><b>Attaques informatisées par IA</b> : le framework de test d'intrusion IA « ARTEX » utilisé contre plus de 200 organisations dans 14 pays (<a href="https://dcod.ch/2026/11/10/ransomwares-piratages-15-cyberattaques-dampleur-du-10-novembre-2026-dont-danfoss/">dcod.ch</a>).</li>
+</ul>
+<h2>🔑 À retenir</h2>
+<ol>
+<li><b>Patch immédiat</b> : Chrome, PHP, Apache et environnements Mattermost doivent être mis à jour en priorité — des exploitations actives sont documentées.</li>
+<li><b>NIS 2 adopté</b> : 15 000 à 18 000 entités françaises doivent se préparer aux obligations de gestion des risques et de notification (24 h / 72 h / 1 mois).</li>
+<li><b>Sabotage OT</b> : l'attribution officielle de l'attaque des chaînes du froid confirme la menace de sabotage physique sur les équipements industriels connectés.</li>
+<li><b>Fuites de données massives</b> : 45 % des Français notifiés d'une fuite — renforcer MFA, mots de passe uniques et vigilance face aux arnaques de fin d'année.</li>
+</ol>
+<p>Sources institutionnelles : <a href="https://cyber.gouv.fr">ANSSI</a> · <a href="https://cert.ssi.gouv.fr">CERT-FR</a> · <a href="https://cybermalveillance.gouv.fr">cybermalveillance.gouv.fr</a></p>
+<p><i>Sources presse (9–16 nov. 2026) : AFP, presse spécialisée FR/EN.</i></p>
+]]>    </description>
+    </item>
     <item>
       <title>Briefing cybersécurité — semaine du 5 au 12 novembre 2026 : l'Iran accusé du sabotage des chaînes du froid</title>
       <link>https://github.com/SEEB-IT/cyber-briefing-rss</link>
